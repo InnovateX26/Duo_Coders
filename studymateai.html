@@ -371,3 +371,16 @@
   </div>
   <div style="text-align:center;margin-top:22px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
 </div>
+<!-- ======== NOTES ======== -->
+<div id="notesSection" class="page">
+  <div class="notes-card">
+    <div class="sec-title" style="margin-bottom:20px"><div class="dot"></div>📝 AI Notes Generator</div>
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:16px">Enter any topic to auto-generate structured study notes instantly. (+2 streak pts)</p>
+    <div class="ni-row">
+      <input class="ni" id="noteTopic" placeholder="e.g. Photosynthesis, Newton's Laws, Pointers in C...">
+      <button class="btn-acc" onclick="genNotes()">Generate →</button>
+    </div>
+    <div class="notes-out" id="notesOut"></div>
+  </div>
+  <div style="text-align:center;margin-top:18px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
+</div>
