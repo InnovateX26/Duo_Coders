@@ -612,3 +612,46 @@ function toast(msg){
   clearTimeout(window._tt);
   window._tt=setTimeout(()=>t.style.display='none',2400);
 }
+// ── QUIZ ──
+function initQuiz(){
+  qList=[...qBank].sort(()=>Math.random()-.5).slice(0,5);
+  curQ=0;correct=0;answered=false;
+  document.getElementById('quizRes').style.display='none';
+  document.getElementById('quizBody').style.display='block';
+  renderQ();
+}
+function renderQ(){
+  if(curQ>=qList.length){showResult();return;}
+  answered=false;
+  const q=qList[curQ];
+  document.getElementById('quizQ').textContent=q.q;
+  document.getElementById('qStat').textContent=`Q ${curQ+1} of ${qList.length}`;
+  document.getElementById('qFill').style.width=((curQ/qList.length)*100)+'%';
+  document.getElementById('nextBtn').style.display='none';
+  const ls=['A','B','C','D'];
+  document.getElementById('quizOpts').innerHTML=q.opts.map((o,i)=>`<div class="quiz-opt" onclick="selOpt(this,${i})" data-i="${i}"><span class="opt-l">${ls[i]}</span>${o}</div>`).join('');
+}
+function selOpt(el,idx){
+  if(answered)return;
+  answered=true;
+  const q=qList[curQ];
+  document.querySelectorAll('.quiz-opt').forEach((o,i)=>{
+    if(i===q.a)o.className='quiz-opt ok';
+    else if(i===idx&&idx!==q.a)o.className='quiz-opt no';
+    o.style.pointerEvents='none';
+  });
+  if(idx===q.a){correct++;addPts(1,'✅ Correct Quiz Answer');}
+  document.getElementById('nextBtn').style.display='inline-block';
+}
+function nextQ(){curQ++;renderQ();}
+function showResult(){
+  quizDone++;
+  document.getElementById('stQuiz').textContent=quizDone;
+  document.getElementById('qFill').style.width='100%';
+  document.getElementById('quizBody').style.display='none';
+  document.getElementById('quizRes').style.display='block';
+  const e=correct>=4?'🎉':correct>=2?'💪':'📚';
+  document.getElementById('rTitle').textContent=`${e} ${correct}/${qList.length} Correct!`;
+  document.getElementById('rSub').textContent=`You earned ${correct} point${correct!==1?'s':''} this quiz!`;
+  addPts(5,'🎯 Completed Full Quiz');
+}
