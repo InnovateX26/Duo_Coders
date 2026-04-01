@@ -586,3 +586,29 @@ function go(id){
   if(id==='streakPanel')updateUI();
   if(id==='feedbackSection'){document.getElementById('fbForm').style.display='block';document.getElementById('fbOk').style.display='none';}
 }
+// ── STREAK ──
+function addPts(n,label){
+  pts+=n;
+  history.unshift({label,pts:n,time:new Date().toLocaleTimeString()});
+  if(history.length>8)history.pop();
+  updateUI();
+  toast(`🔥 +${n} ${label}`);
+}
+function updateUI(){
+  document.getElementById('navPts').textContent=pts;
+  document.getElementById('stPts').textContent=pts;
+  document.getElementById('skBig').textContent=pts;
+  const pct=Math.min(100,(pts/1000)*100);
+  document.getElementById('skBar').style.width=pct+'%';
+  const rem=Math.max(0,1000-pts);
+  document.getElementById('skTgt').textContent=rem>0?`${rem} more points to Premium! 🚀`:'🎊 Premium Unlocked!';
+  document.getElementById('skRwrd').textContent=pts>=1000?'🎊 Congratulations! Claim your 50-60% OFF Premium!':`🏆 ${1000-pts} pts left → 50-60% OFF Premium!`;
+  const h=document.getElementById('skHist');
+  h.innerHTML=history.length?history.map(x=>`<div class="hi"><span>${x.label}</span><span class="hi-pts">+${x.pts} pts</span></div>`).join(''):'<div style="color:var(--muted);font-size:0.83rem">No activity yet.</div>';
+}
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.display='block';
+  clearTimeout(window._tt);
+  window._tt=setTimeout(()=>t.style.display='none',2400);
+}
