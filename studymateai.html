@@ -525,3 +525,10 @@ let qBank=[
   {q:"How many bones does an adult human body have?",opts:["196","206","216","226"],a:1},
 ];
 let qList=[],curQ=0,correct=0,answered=false;
+// ── AUTH ──
+function doLogin(){
+  const e=document.getElementById('lEmail').value, p=document.getElementById('lPass').value;
+  if(!e||!p){alert('Fill all fields');return;}
+  user={name:e.split('@')[0],email:e};
+  afterLogin();
+}
