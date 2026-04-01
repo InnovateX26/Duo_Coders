@@ -532,3 +532,9 @@ function doLogin(){
   user={name:e.split('@')[0],email:e};
   afterLogin();
 }
+function doSignup(){
+  const n=document.getElementById('sName').value||'Student', e=document.getElementById('sEmail').value, p=document.getElementById('sPass').value;
+  if(!e||!p){alert('Fill all fields');return;}
+  user={name:n,email:e};
+  afterLogin();
+}
