@@ -575,3 +575,14 @@ function sendReset(){
   document.getElementById('resetMsg').style.display='block';
   setTimeout(closeForgot,2500);
 }
+// ── NAVIGATION ──
+function go(id){
+  const all=['dashboard','quizSection','streakPanel','notesSection','timetableSection','chatSection','progressSection','feedbackSection'];
+  all.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display='none';});
+  const t=document.getElementById(id);
+  if(t){t.style.display='block';}
+  window.scrollTo(0,0);
+  if(id==='quizSection'&&qList.length===0)initQuiz();
+  if(id==='streakPanel')updateUI();
+  if(id==='feedbackSection'){document.getElementById('fbForm').style.display='block';document.getElementById('fbOk').style.display='none';}
+}
