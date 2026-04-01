@@ -549,3 +549,14 @@ function afterLogin(){
   initProgress();
   initChart();
 }
+function logout(){
+  if(!confirm('Logout from StudyMate AI?'))return;
+  user=null;pts=0;quizDone=0;history=[];rating=0;
+  document.getElementById('navbar').style.display='none';
+  document.getElementById('footerEl').style.display='none';
+  document.querySelectorAll('.page').forEach(p=>p.className='page');
+  document.getElementById('loginPage').className='page show';
+  document.getElementById('lEmail').value='';
+  document.getElementById('lPass').value='';
+  updateUI();
+}
