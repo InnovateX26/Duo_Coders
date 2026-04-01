@@ -1,0 +1,44 @@
+/* ============================================
+   FILE: css/variables.css
+   CSS Custom Properties / Design Tokens
+   ============================================ */
+
+:root {
+  /* Colors */
+  --navy:   #0d1b3e;
+  --card:   #1a2a5e;
+  --card2:  #1e3070;
+  --accent: #6c63ff;
+  --teal:   #00d4aa;
+  --gold:   #f5c518;
+  --coral:  #ff6b6b;
+  --text:   #e8eaf6;
+  --muted:  #8892b0;
+  --border: rgba(108, 99, 255, 0.25);
+
+  /* Effects */
+  --glow: 0 0 30px rgba(108, 99, 255, 0.3);
+
+  /* Gradients */
+  --grad-accent: linear-gradient(135deg, var(--accent), #5a52d5);
+  --grad-teal:   linear-gradient(135deg, var(--teal), #00b894);
+  --grad-gold:   linear-gradient(90deg, var(--gold), #ffdd57);
+  --grad-brand:  linear-gradient(90deg, var(--accent), var(--teal));
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Spacing */
+  --gap-sm:  8px;
+  --gap-md:  14px;
+  --gap-lg:  22px;
+  --gap-xl:  36px;
+
+  /* Transitions */
+  --trans-fast: 0.15s ease;
+  --trans-med:  0.25s ease;
+  --trans-slow: 0.4s ease;
+}
