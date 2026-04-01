@@ -79,3 +79,15 @@
   .btn-ghost:hover{background:rgba(255,255,255,0.05);}
   .btn-acc{padding:11px 20px;background:linear-gradient(135deg,var(--accent),#5a52d5);border:none;border-radius:10px;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:0.86rem;cursor:pointer;transition:.2s;}
   .btn-acc:hover{box-shadow:0 4px 18px rgba(108,99,255,0.4);}
+   /* STATS */
+  .stats-row{display:flex;gap:14px;padding:0 40px 36px;flex-wrap:wrap;}
+  .stat-card{flex:1;min-width:150px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;position:relative;overflow:hidden;}
+  .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+  .sc1::before{background:linear-gradient(90deg,var(--accent),#8b7cff);}
+  .sc2::before{background:linear-gradient(90deg,var(--teal),#00f5d4);}
+  .sc3::before{background:linear-gradient(90deg,var(--gold),#ffdd57);}
+  .sc4::before{background:linear-gradient(90deg,var(--coral),#ff9f9f);}
+  .stat-ico{font-size:1.5rem;margin-bottom:8px;}
+  .stat-v{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;}
+  .stat-l{color:var(--muted);font-size:0.78rem;margin-top:3px;}
+  
