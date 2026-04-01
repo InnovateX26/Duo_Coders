@@ -398,3 +398,17 @@
   </div>
   <div style="text-align:center;margin-top:18px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
 </div>
+<!-- ======== CHAT ======== -->
+<div id="chatSection" class="page">
+  <div class="chat-card">
+    <div class="sec-title" style="margin-bottom:18px"><div class="dot"></div>💬 AI Study Assistant</div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="chat-msg-ai">👋 Namaste! Main StudyMate AI hoon. Koi bhi doubt pucho — Math, Science, History, Coding — sab! (+1 streak pt per question 🔥)</div>
+    </div>
+    <div class="chat-ir">
+      <input class="chat-in" id="chatIn" placeholder="Ask your doubt here..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:18px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
+</div>
