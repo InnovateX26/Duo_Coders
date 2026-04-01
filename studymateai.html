@@ -316,3 +316,28 @@
     <div class="feat-card" onclick="go('feedbackSection')"><div class="feat-ico">⭐</div><div class="feat-name">Feedback</div><div class="feat-desc">Rate your experience & help us improve.</div><span class="feat-badge bo">Optional</span></div>
   </div>
 </div>
+<!-- ======== QUIZ ======== -->
+<div id="quizSection" class="page">
+  <div class="quiz-card">
+    <div class="quiz-hd">
+      <div class="sec-title" style="margin:0"><div class="dot"></div>Daily Quiz</div>
+      <div style="color:var(--gold);font-weight:700;font-size:0.84rem">🔥 +1 pt per correct</div>
+    </div>
+    <div class="qbar-bg"><div class="qbar-fill" id="qFill" style="width:0%"></div></div>
+    <div id="quizBody">
+      <div class="quiz-q" id="quizQ">Loading...</div>
+      <div class="quiz-opts" id="quizOpts"></div>
+      <div style="margin-top:18px;display:flex;justify-content:space-between;align-items:center">
+        <span style="color:var(--muted);font-size:0.8rem" id="qStat">Q 1 of 5</span>
+        <button class="btn-acc" id="nextBtn" onclick="nextQ()" style="display:none">Next →</button>
+      </div>
+    </div>
+    <div class="quiz-res" id="quizRes">
+      <div class="big">🎉</div>
+      <h3 id="rTitle">Quiz Complete!</h3>
+      <p id="rSub">Great job!</p>
+      <button class="btn-teal" onclick="initQuiz()">Try Again</button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:18px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
+</div>
