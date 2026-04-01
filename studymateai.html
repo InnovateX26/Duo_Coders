@@ -655,3 +655,30 @@ function showResult(){
   document.getElementById('rSub').textContent=`You earned ${correct} point${correct!==1?'s':''} this quiz!`;
   addPts(5,'🎯 Completed Full Quiz');
 }
+// ── NOTES ──
+function genNotes(){
+  const topic=document.getElementById('noteTopic').value.trim();
+  if(!topic){alert('Enter a topic');return;}
+  const out=document.getElementById('notesOut');
+  out.style.display='block';
+  out.innerHTML='<span class="typing">Generating notes for <strong>'+topic+'</strong></span>';
+  setTimeout(()=>{
+    out.innerHTML=`<strong>📌 ${topic} — Study Notes</strong><br><br>
+<strong>📖 Introduction:</strong><br>${topic} is a key academic concept. Mastering it builds a strong foundation for advanced topics.<br><br>
+<strong>🔑 Key Points:</strong><br>
+&bull; Definition and fundamental concept of ${topic}<br>
+&bull; Historical background and discovery<br>
+&bull; Core principles, laws, and rules<br>
+&bull; Real-world applications and examples<br><br>
+<strong>🧪 Examples:</strong><br>
+&bull; Example 1: Practical real-world application<br>
+&bull; Example 2: Scientific or technical use case<br>
+&bull; Practice problem for self-testing<br><br>
+<strong>💡 Key Formula / Rule:</strong><br>
+&bull; Remember the most important formula related to ${topic}<br>
+&bull; Common mistakes to avoid in exams<br><br>
+<strong>📝 Quick Revision:</strong><br>
+Focus on definitions, key formulas, and examples. Review this 24 hours before your exam for best retention!`;
+    addPts(2,'📝 Generated AI Notes');
+  },1100);
+}
