@@ -567,3 +567,11 @@ function switchTab(t,btn){
   document.getElementById('lForm').style.display=t==='login'?'block':'none';
   document.getElementById('sForm').style.display=t==='signup'?'block':'none';
 }
+// ── FORGOT ──
+function showForgot(){document.getElementById('forgotModal').className='modal-overlay active';}
+function closeForgot(){document.getElementById('forgotModal').className='modal-overlay';document.getElementById('resetMsg').style.display='none';}
+function sendReset(){
+  if(!document.getElementById('forgotEmail').value){alert('Enter email');return;}
+  document.getElementById('resetMsg').style.display='block';
+  setTimeout(closeForgot,2500);
+}
