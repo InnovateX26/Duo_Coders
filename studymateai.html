@@ -241,3 +241,14 @@
     <button class="btn-logout" onclick="logout()">Logout</button>
   </div>
 </nav>
+<!-- FORGOT MODAL -->
+<div class="modal-overlay" id="forgotModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeForgot()">×</button>
+    <h3>🔑 Forgot Password</h3>
+    <p>Enter your email to receive a reset link.</p>
+    <div class="fg"><label>Email</label><input type="email" id="forgotEmail" placeholder="your@email.com"></div>
+    <button class="btn-pri" onclick="sendReset()">Send Reset Link</button>
+    <div class="msg-success" id="resetMsg">✅ Reset link sent! Check your inbox.</div>
+  </div>
+</div>
