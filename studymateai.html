@@ -510,3 +510,18 @@
 <div class="streak-toast" id="toast">🔥 +1 Point!</div>
 
 <script>
+// ── STATE ──
+let user=null, pts=0, quizDone=0, history=[], rating=0;
+let qBank=[
+  {q:"What is the powerhouse of the cell?",opts:["Nucleus","Mitochondria","Ribosome","Golgi Body"],a:1},
+  {q:"Which law states F = ma?",opts:["Newton's 1st Law","Newton's 2nd Law","Newton's 3rd Law","Boyle's Law"],a:1},
+  {q:"What is H₂O commonly known as?",opts:["Hydrogen Peroxide","HCl","Water","Ammonia"],a:2},
+  {q:"Father of computers?",opts:["Alan Turing","Charles Babbage","Bill Gates","Ada Lovelace"],a:1},
+  {q:"Chemical symbol for Gold?",opts:["Gd","Go","Au","Ag"],a:2},
+  {q:"Planet closest to the Sun?",opts:["Venus","Earth","Mars","Mercury"],a:3},
+  {q:"Square root of 144?",opts:["11","12","13","14"],a:1},
+  {q:"India gained independence in?",opts:["1945","1946","1947","1948"],a:2},
+  {q:"Which gas do plants absorb during photosynthesis?",opts:["Oxygen","Nitrogen","Carbon Dioxide","Hydrogen"],a:2},
+  {q:"How many bones does an adult human body have?",opts:["196","206","216","226"],a:1},
+];
+let qList=[],curQ=0,correct=0,answered=false;
