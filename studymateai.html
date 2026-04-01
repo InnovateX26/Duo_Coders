@@ -682,3 +682,32 @@ Focus on definitions, key formulas, and examples. Review this 24 hours before yo
     addPts(2,'📝 Generated AI Notes');
   },1100);
 }
+// ── CHAT ──
+const replies={
+  photosynthesis:"🌿 Photosynthesis: Plants make food using sunlight, water & CO₂. Formula: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂. Chlorophyll in leaves absorbs light energy!",
+  newton:"⚡ Newton's Laws: 1. Object at rest stays at rest. 2. F = ma. 3. Every action has equal & opposite reaction. These form classical mechanics!",
+  python:"🐍 Python is a beginner-friendly language. Key: variables, loops, functions (def), lists, dicts, OOP. Start with: print('Hello World!')",
+  integration:"∫ Integration = reverse of differentiation. ∫xⁿ dx = xⁿ⁺¹/(n+1) + C. Finds area under curves. Types: definite (number) & indefinite (function + C).",
+  derivative:"📐 Derivative = rate of change. d/dx(xⁿ) = nxⁿ⁻¹. Example: d/dx(x²) = 2x. Used in finding slopes, maxima & minima!",
+  ohm:"⚡ Ohm's Law: V = IR (Voltage = Current × Resistance). At constant temp, current is directly proportional to voltage. R is in Ohms (Ω).",
+  default:"🤖 Great question! Break it into smaller parts: (1) Start with definition, (2) Understand key concepts, (3) Practice with examples. Ask me more specific questions about any subject! 📚"
+};
+function sendChat(){
+  const inp=document.getElementById('chatIn');
+  const msg=inp.value.trim();
+  if(!msg)return;
+  const m=document.getElementById('chatMsgs');
+  m.innerHTML+=`<div class="chat-msg-user">${msg}</div>`;
+  m.innerHTML+=`<div class="chat-msg-ai typing" id="typing">Thinking</div>`;
+  inp.value='';m.scrollTop=m.scrollHeight;
+  setTimeout(()=>{
+    const el=document.getElementById('typing');
+    if(el){
+      const k=Object.keys(replies).find(k=>msg.toLowerCase().includes(k));
+      el.id='';el.className='chat-msg-ai';
+      el.textContent=replies[k]||replies.default;
+      m.scrollTop=m.scrollHeight;
+      addPts(1,'💬 Asked AI Question');
+    }
+  },900);
+}
