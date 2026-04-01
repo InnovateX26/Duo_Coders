@@ -560,3 +560,10 @@ function logout(){
   document.getElementById('lPass').value='';
   updateUI();
 }
+// ── TABS ──
+function switchTab(t,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.className='tab-btn');
+  btn.className='tab-btn on';
+  document.getElementById('lForm').style.display=t==='login'?'block':'none';
+  document.getElementById('sForm').style.display=t==='signup'?'block':'none';
+}
