@@ -384,3 +384,17 @@
   </div>
   <div style="text-align:center;margin-top:18px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
 </div>
+  <!-- ======== TIMETABLE ======== -->
+<div id="timetableSection" class="page">
+  <div class="tt-card">
+    <div class="sec-title" style="margin-bottom:6px"><div class="dot"></div>🗓️ Smart Timetable Generator</div>
+    <p style="color:var(--muted);font-size:0.84rem;margin-bottom:18px">Add subjects + daily hours + priority to generate your smart plan.</p>
+    <div class="tt-row"><input class="ti" placeholder="Subject (e.g. Physics)" id="s1"><input class="ti" placeholder="Hrs/day" type="number" id="h1" min="0.5" step="0.5"><input class="ti" placeholder="Priority 1-5" type="number" id="p1" min="1" max="5"></div>
+    <div class="tt-row"><input class="ti" placeholder="Subject (e.g. Maths)" id="s2"><input class="ti" placeholder="Hrs/day" type="number" id="h2" min="0.5" step="0.5"><input class="ti" placeholder="Priority 1-5" type="number" id="p2" min="1" max="5"></div>
+    <div class="tt-row"><input class="ti" placeholder="Subject (e.g. Chemistry)" id="s3"><input class="ti" placeholder="Hrs/day" type="number" id="h3" min="0.5" step="0.5"><input class="ti" placeholder="Priority 1-5" type="number" id="p3" min="1" max="5"></div>
+    <div class="tt-row"><input class="ti" placeholder="Subject (optional)" id="s4"><input class="ti" placeholder="Hrs/day" type="number" id="h4" min="0.5" step="0.5"><input class="ti" placeholder="Priority 1-5" type="number" id="p4" min="1" max="5"></div>
+    <button class="btn-teal" onclick="genTT()" style="margin-top:4px">Generate My Schedule ✨</button>
+    <div class="sch-out" id="schOut"></div>
+  </div>
+  <div style="text-align:center;margin-top:18px"><button class="btn-ghost" onclick="go('dashboard')">← Dashboard</button></div>
+</div>
