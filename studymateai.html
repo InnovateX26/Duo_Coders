@@ -223,3 +223,21 @@
 </style>
 </head>
 <body>
+  <!-- NAVBAR -->
+<nav class="navbar" id="navbar" style="display:none">
+  <div class="nav-logo">🧠 <span>StudyMate AI</span></div>
+  <div class="nav-links">
+    <a onclick="go('dashboard')">Home</a>
+    <a onclick="go('chatSection')">Q&A</a>
+    <a onclick="go('notesSection')">Notes</a>
+    <a onclick="go('quizSection')">Quiz</a>
+    <a onclick="go('timetableSection')">Timetable</a>
+    <a onclick="go('progressSection')">Progress</a>
+    <a onclick="go('feedbackSection')">Feedback</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-streak" onclick="go('streakPanel')">🔥 <span id="navPts">0</span> pts</div>
+    <div class="nav-avatar" id="navAv">A</div>
+    <button class="btn-logout" onclick="logout()">Logout</button>
+  </div>
+</nav>
