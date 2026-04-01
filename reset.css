@@ -1,0 +1,45 @@
+/* ============================================
+   FILE: css/reset.css
+   CSS Reset & Base Styles
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--navy);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* ---- Page visibility ---- */
+.page {
+  display: none;
+  min-height: 100vh;
+}
+
+.page.show {
+  display: flex;
+}
