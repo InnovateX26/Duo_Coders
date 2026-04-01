@@ -731,3 +731,19 @@ function initChart(){
       <span style="color:var(--muted);font-size:0.7rem">${v}h</span>
     </div>`).join('');
 }
+// ── FEEDBACK ──
+function setRating(n){
+  rating=n;
+  document.querySelectorAll('.star-btn').forEach((s,i)=>s.className='star-btn'+(i<n?' lit':''));
+}
+function toggleChip(el){el.classList.toggle('on');}
+function submitFb(){
+  if(!rating){alert('Please select a rating!');return;}
+  document.getElementById('fbForm').style.display='none';
+  document.getElementById('fbOk').style.display='block';
+  addPts(2,'⭐ Submitted Feedback');
+  rating=0;
+}
+</script>
+</body>
+</html>
