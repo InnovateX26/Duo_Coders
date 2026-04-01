@@ -209,3 +209,17 @@
  /* TYPING */
   .typing::after{content:'...';animation:dots 1.2s steps(3,end) infinite;}
   @keyframes dots{0%{content:'.'}33%{content:'..'}66%{content:'...'}}
+   /* MOBILE */
+  @media(max-width:680px){
+    .stats-row,.feat-grid{padding:0 16px 24px;}
+    .hero,.stats-row{padding-left:16px;padding-right:16px;}
+    .hero-title{font-size:1.8rem;}
+    .ft-grid{grid-template-columns:1fr 1fr;}
+    .sk-grid{grid-template-columns:1fr;}
+    .navbar{padding:12px 16px;}
+    .nav-links{display:none;}
+    #quizSection,#feedbackSection,#notesSection,#timetableSection,#chatSection,#progressSection,#streakPanel{padding:76px 16px 36px;}
+  }
+</style>
+</head>
+<body>
