@@ -711,3 +711,23 @@ function sendChat(){
     }
   },900);
 }
+// ── PROGRESS ──
+function initProgress(){
+  const subj=[{n:'Physics',p:72,t:'8/11'},{n:'Mathematics',p:58,t:'7/12'},{n:'Chemistry',p:85,t:'10/12'},{n:'Computer Sci.',p:91,t:'9/10'}];
+  document.getElementById('progGrid').innerHTML=subj.map(s=>`
+    <div class="prog-card">
+      <div class="prog-subj">${s.n}<span class="prog-pct">${s.p}%</span></div>
+      <div class="prog-bar-bg"><div class="prog-bar-fill" style="width:${s.p}%"></div></div>
+      <div class="prog-topics">${s.t} topics done</div>
+    </div>`).join('');
+  document.getElementById('stRank').textContent='#12';
+}
+function initChart(){
+  const data=[2,3,1.5,4,2.5,5,3.5];
+  const max=Math.max(...data);
+  document.getElementById('weekChart').innerHTML=data.map(v=>`
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+      <div style="width:100%;background:linear-gradient(180deg,var(--accent),var(--teal));border-radius:4px 4px 0 0;height:${(v/max)*100}%;min-height:4px"></div>
+      <span style="color:var(--muted);font-size:0.7rem">${v}h</span>
+    </div>`).join('');
+}
