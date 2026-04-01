@@ -538,3 +538,14 @@ function doSignup(){
   user={name:n,email:e};
   afterLogin();
 }
+function socialLogin(prov){user={name:'Demo Student',email:'demo@studymate.ai'};afterLogin();}
+function afterLogin(){
+  document.getElementById('loginPage').className='page';
+  document.getElementById('navbar').style.display='flex';
+  document.getElementById('footerEl').style.display='block';
+  document.getElementById('navAv').textContent=user.name[0].toUpperCase();
+  addPts(5,'🗓️ Daily Login Bonus');
+  go('dashboard');
+  initProgress();
+  initChart();
+}
